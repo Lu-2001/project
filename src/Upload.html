@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <title>Upload</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <span><a href="Home.html">Home</a></span>
+        <span><a href="Browser.html">Browse</a></span>
+        <span><a href="Search.html">Search</a></span>>
+        <div class="account">
+            <div><p>My account</p></div>
+            <div class="detail">
+                <ul>
+                    <li><p><a href="Upload.html">Upload</a></p></li>
+                    <li><p><a href="My%20photos.html">My Photo</a> </p></li>
+                    <li><p><a href="My%20favor.html">My Favor</a> </p></li>
+                    <li><p><a href="../Index.html">Login</a> </p></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <section>
+        <form action="My%20photos.html" method="post">
+            <div class="need-border">
+                <p class="sub-header">Upload</p>
+                <script type="text/javascript" src="jquery-3.5.0.js"></script>
+                <div style="text-align: center; height: 350px">
+                    <img id="preview" src="" style="max-height: 300px"><br>
+                    <input id="upload" type="file" value="upload" required>
+                </div>
+
+                <script type="text/javascript">
+                    $('#upload').change(function(){
+                        // 获取FileList的第一个元素
+                        //alert(document.getElementById('upload').files[0]);
+                        var f = document.getElementById('upload').files[0];
+                        var src = window.URL.createObjectURL(f);
+                        document.getElementById('preview').src = src
+                    })
+                </script>
+                <!--<button type="submit">upload</button>-->
+                <p>Title for your picture:</p>
+                <input type="text" required>
+                <p>Description for your picture:</p>
+                <textarea required></textarea>
+                <p>Country for your picture:</p>
+                <input type="text" required>
+                <p>City for your picture:</p>
+                <input type="text" required><br>
+                <button type="submit" onclick="alert('The picture has been uploaded!')">submit</button>
+            </div>
+        </form>
+    </section>
+</body>
+</html>

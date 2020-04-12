@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header><!--导航栏-->
+        <span class="this"><a href="#">Home</a></span>
+        <span><a href="Browser.html">Browse</a></span>
+        <span><a href="Search.html">Search</a></span>
+        <div class="account"><!--MY account-->
+            <div><p>My account</p></div>
+            <div class="detail">
+                <ul>
+                    <li><p><a href="Upload.html">Upload</a></p></li>
+                    <li><p><a href="My%20photos.html">My Photo</a> </p></li>
+                    <li><p><a href="My%20favor.html">My Favor</a> </p></li>
+                    <li><p><a href="../Index.html">Login</a> </p></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section style="text-align: center">
+        <div><img class="bigimg" src="../images/normal/medium/81.jpg"></div><!--big image-->
+        <div><!--pictures-->
+            <div class="picture-show">
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/30.jpg"></a>
+                </div>
+                <p>introduction</p>
+                <p>intro</p>
+            </div>
+            <div class="picture-show show2">
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/50.jpg"></a>
+                </div>
+                <p>introduction</p>
+                <p>intro</p>
+            </div>
+            <div class="picture-show">
+                <div class="cover">
+                    <a href="Details.html"><img class="height" src="../images/normal/medium/76.jpg"></a>
+                </div>
+                <p>introduction</p>
+                <p>intro</p>
+            </div><br>
+            <div class="picture-show show2">
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/64.jpg"></a>
+                </div>
+                <p>introduction</p>
+                <p>intro</p>
+            </div>
+            <div class="picture-show">
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/40.jpg"></a>
+                </div>
+                <p>introduction</p>
+                <p>intro</p>
+            </div>
+            <div class="picture-show show2">
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/66.jpg"></a>
+                </div>
+                <p>introduction</p>
+                <p>intro</p>
+            </div>
+        </div>
+
+        <div class="right-button"><!--2 buttons-->
+            <button id="back-to-top">Back to top</button>
+            <script type="text/javascript" src="jquery-3.5.0.js"></script>
+            <script>
+                $(function(){
+                    //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+                    $(function () {
+                        $(window).scroll(function(){
+                            if ($(window).scrollTop()>100){
+                                $("#back-to-top").fadeIn(1500);
+                            }
+                            else
+                            {
+                                $("#back-to-top").fadeOut(1500);
+                            }
+                        });
+
+                        //当点击跳转链接后，回到页面顶部位置
+                        $("#back-to-top").click(function(){
+                            //$('body,html').animate({scrollTop:0},1000);
+                            if ($('html').scrollTop()) {
+                                $('html').animate({ scrollTop: 0 }, 1000);
+                                return false;
+                            }
+                            $('body').animate({ scrollTop: 0 }, 1000);
+                            return false;
+                        });
+                    });
+                });
+            </script>
+            <button onclick="alert('The pictures have been refreshed!')">refresh</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p><a href="">使用条款</a></p>
+                    <p><a href="">隐私保护</a></p>
+                    <p><a href="">Cookie</a></p>
+                </div>
+                <div class="col">
+                    <p><a href="">关于</a></p>
+                    <p><a href="">联系我们</a></p>
+                </div>
+                <div class="col">
+                    <p>备案号：19302010026</p>
+                </div>
+            </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <p class="copyright">Copyright © 2019-2021 Web fundamental. All Rights Reserved. 备案号：沪BILIBILI备12138号-1</p>
+                </div>
+            </div>
+    </footer>
+</body>
+</html>

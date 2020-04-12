@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="reset.css">
+    <meta charset="UTF-8">
+    <title>Brower</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <span><a href="Home.html">Home</a></span>
+        <span class="this"><a href="#">Browse</a></span>
+        <span><a href="Search.html">Search</a></span>
+        <div class="account">
+            <div><p>My account</p></div>
+            <div class="detail">
+                <ul>
+                    <li><p><a href="Upload.html">Upload</a></p></li>
+                    <li><p><a href="My%20photos.html">My Photo</a> </p></li>
+                    <li><p><a href="My%20favor.html">My Favor</a> </p></li>
+                    <li><p><a href="../Index.html">Login</a> </p></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <aside>
+            <p class="sub-header">Search by Title</p>
+            <form action="#" method="post">
+                <div style="display: flex; min-width: 95px; max-width: 100%;">
+                    <input type="search" placeholder="Search" style="flex-grow: 1; overflow: hidden">
+                    <button type="submit" onclick="alert('Search successfully!')">search</button>
+                </div>
+            </form>
+
+            <div class="quick"><!--quick search-->
+                <label class="sub-header">Hot Content</label><br>
+                <a href="" onclick="alert('Update successfully!')">Scenery</a><hr>
+                <a href="" onclick="alert('Update successfully!')">City</a><hr>
+                <a href="" onclick="alert('Update successfully!')">People</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Animal</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Building</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Wonder</a><hr>
+            </div>
+
+            <div class="quick">
+                <label class="sub-header">Hot Countries</label><br>
+                <a href="" onclick="alert('Update successfully!')">China</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Italy</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Japan</a><hr>
+                <a href="" onclick="alert('Update successfully!')">America</a><hr>
+            </div>
+
+            <div class="quick">
+                <label class="sub-header">Hot Cities</label><br>
+                <a href="" onclick="alert('Update successfully!')">Shanghai</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Harbin</a><hr>
+                <a href="" onclick="alert('Update successfully!')">Hongkong</a><hr>
+            </div>
+        </aside>
+
+        <div>
+            <form action="#" method="post" class="browser need-border" style="min-width: 50%">
+                <p class="sub-header">Filter</p>
+                <select name="Filter by Content">
+                    <option>Filter by Content</option>
+                    <option>Scenery</option>
+                    <option>City</option>
+                    <option>People</option>
+                    <option>Animal</option>
+                    <option>Building</option>
+                    <option>Wonder</option>
+                </select>
+                <select name="Filter by Country" id="parent" onchange="clickOpt()">
+                    <option>Filter by Country</option>
+                    <option value="1">China</option>
+                    <option value="2">Italy</option>
+                    <option value="3">Japan</option>
+                    <option value="4">America</option>
+                </select>
+                <select name="Filter by City" id="child">
+                    <option>Filter by City</option>
+                </select>
+                <script type="text/javascript">
+                    var China = ['Shanghai','Kunming','Beijing','Yantai'];
+                    var Japan = ['Tokyo', 'Osaka', 'Kamakura'];
+                    var Italy = ['Roma','Milan','Venice','Florence'];
+                    var America = ['New York','San Francisco', 'Washington'];
+                    function addOption(txt) {
+                        var opt = document.createElement("option");
+                        opt.text = txt;
+                        child.options.add(opt);
+                    }
+
+                    function clickOpt() {
+                        var parent = document.getElementById("parent");
+                        var p_value = parent.value;
+                        var child = document.getElementById("child");
+                        var c_length = child.options.length;
+                        if(c_length > 0){
+                            for (var i = 0; i < c_length; i++){
+                                child.options.remove(0);
+                            }
+                        }
+                        if(p_value == "1"){
+                            for($i=0; $i <3; $i++){
+                                addOption(/*$i,*/ China[$i])
+                            }
+                        }else if(p_value=="3"){
+                            for ($i = 0; $i<3; $i++){
+                                addOption(/*$i,*/ Japan[$i])
+                            }
+                        }else if(p_value === "2"){
+                            for ($i=0; $i<4; $i++){
+                                addOption(/*$i,*/ Italy[$i])
+                            }
+                        }else if (p_value == "4"){
+                            for ($i = 0; $i<3; $i++){
+                                addOption(/*$i,*/ America[$i])
+                            }
+                        }
+                    }
+                </script>
+                <button onclick="alert('Search successfully!')">Filter</button>
+            </form>
+
+            <div class="browser need-border"><!--pictures-->
+                <div class="cover">
+                    <a href="Details.html"><img class="height" src="../images/normal/medium/1.jpg" alt="1"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/2.jpg" alt="2"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/3.jpg" alt="3"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="height" src="../images/normal/medium/4.jpg" alt="4"></a>
+                </div><br>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/5.jpg" alt="5"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/6.jpg" alt="6"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="height" src="../images/normal/medium/7.jpg" alt="7"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/8.jpg" alt="8"></a>
+                </div><br>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/9.jpg" alt="9"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/10.jpg" alt="10"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/11.jpg" alt="11"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/12.jpg" alt="12"></a>
+                </div><br>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/13.jpg" alt="13"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="height" src="../images/normal/medium/14.jpg" alt="14"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/15.jpg" alt="15"></a>
+                </div>
+                <div class="cover">
+                    <a href="Details.html"><img class="width" src="../images/normal/medium/16.jpg" alt="16"></a>
+                </div>
+            </div>
+        </div>
+        <div class="browser-right need-border">
+            <p class="sub-header">More interests:</p>
+            <a href="Details.html"><img src="../images/normal/tiny/1.jpg"></a>
+            <a href="Details.html"><img src="../images/normal/tiny/2.jpg"></a>
+            <a href="Details.html"><img src="../images/normal/tiny/3.jpg"></a>
+            <a href="Details.html"><img src="../images/normal/tiny/4.jpg"></a>
+            <a href="Details.html"><img src="../images/normal/tiny/5.jpg"></a>
+        </div>
+
+        <p class="pages"><a href=""><<</a> <b>1</b><a href="">2</a><a href="">3</a><a href="">>></a> </p>
+    </section>
+    <footer>
+        <hr>
+        <p>版权所有，侵权必究</p>
+        <p>备案号：19302010026</p>
+    </footer>
+</body>
+</html>
